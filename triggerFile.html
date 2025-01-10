@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call Demo</title>
+</head>
+<body>
+    <h1>API Data</h1>
+    <div id="api-data">Loading...</div>
+
+    <script>
+        // Example API call
+        fetch('http://14.97.80.6:8080/time-sheet/check/test') // Replace with your API URL
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('api-data').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('api-data').textContent = `Error: ${error}`;
+            });
+    </script>
+</body>
+</html>
